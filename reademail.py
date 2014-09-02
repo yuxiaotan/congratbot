@@ -40,7 +40,7 @@ def parseemail(message):
 
     tolist = [new["To"]]
     tolist = tolist + string.split(original["To"], ",")
-    tolist = tolist + ([] if original["CC"] == None else original["CC"])
+    tolist = tolist + ([] if original["CC"] == None else [original["CC"]])
     isRepeat = repeatedCongratBot(tolist) 
     
     print "Is a repeat:"
@@ -63,7 +63,6 @@ def getMessage():
     lines = congratFile.readlines()
     numval = random.randint(0, len(lines)-1)
     toReturn = lines[numval] 
-    print toReturn
     congratFile.close()
     return toReturn
 
