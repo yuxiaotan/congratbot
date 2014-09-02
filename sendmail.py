@@ -7,7 +7,7 @@ def send_email(FROM, TO, SUBJECT, MESSAGE):
 
     import smtplib
 
-    gmail_user = "cornellcscongratbot@gmail.com"
+    gmail_user = "congratbotcs3110@gmail.com"
     gmail_pwd = password.password
 
     print 'initiating mail send'

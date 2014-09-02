@@ -36,7 +36,7 @@ def parseemail(message):
     new["References"] = original["Message-ID"]
     new["Subject"] = "Re: "+original["Subject"]
     new["To"] = original["Reply-To"] or original["From"]
-    new["From"] = "cornellcscongratbot@gmail.com"
+    new["From"] = "Congrat Bot <congratbotcs3110@gmail.com>"
 
     tolist = [new["To"]]
     tolist = tolist + string.split(original["To"], ",")
@@ -52,7 +52,7 @@ def parseemail(message):
 def repeatedCongratBot(tolist) :
     count = 0
     for email in tolist:
-        if ("cornellcscongratbot" in email):
+        if ("congratbotcs3110" in email):
            count += 1
     if (count > 1):
         return True
@@ -69,7 +69,7 @@ def getMessage():
 
 def reademail():
     conn = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-    conn.login("cornellcscongratbot@gmail.com", password)
+    conn.login("congratbotcs3110@gmail.com", password)
     conn.select()
 
     typ, data = conn.search(None, 'UNSEEN')
